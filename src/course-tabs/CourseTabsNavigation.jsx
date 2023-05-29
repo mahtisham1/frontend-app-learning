@@ -12,18 +12,20 @@ const CourseTabsNavigation = ({
   <div id="courseTabsNavigation" className={classNames('course-tabs-navigation', className)}>
     <div className="container-xl">
       <nav className="nav flex-column nav-pills">
-        <div aria-label={intl.formatMessage(messages.courseMaterial)}>
-        <div className="nav-items-container">
-            {tabs.map(({ url, title, slug }) => (
-              <a
-                key={slug}
-                className={classNames('nav-link', { active: slug === activeTabSlug })}
-                href={url}
-              >
-                {title}
-              </a>
-            ))}
-          </div>
+        <div className="nav-underline-tabs" aria-label={intl.formatMessage(messages.courseMaterial)}>
+          <ul className="nav-items-container">
+              {tabs.map(({ url, title, slug }) => (
+                <li>
+                  <a
+                    key={slug}
+                    className={classNames('nav-item flex-shrink-0 nav-link', { active: slug === activeTabSlug })}
+                    href={url}
+                  >
+                    {title}
+                  </a>
+                </li>
+              ))}
+          </ul>
         </div>
       </nav>
     </div>
